@@ -373,8 +373,8 @@ uv.y*=1.0;//校正 預設值uv v軸朝下，轉成v軸朝上相同於y軸朝上�
 vec2 mouse=(u_mouse.xy/u_resolution.xy)*2.0-1.0;
 
 // camera option1  (模型應在原點，適用於物件)
-		//vec3 CameraRot=vec3(0.0, mouse.y, mouse.x);  //(思函)調整鏡頭
-        vec3 CameraRot=vec3(0.0, 0.2 ,0.0);  //(思函)調整鏡頭
+		vec3 CameraRot=vec3(0.2, mouse.y+.2, mouse.x+.2);  //(思函)調整鏡頭
+        //vec3 CameraRot=vec3(0.0, 0.2 ,0.0);  //(思函)調整鏡頭
 	vec3 ro= vec3(1.0, 0.0,1.0)*fromEuler(CameraRot);//CameraPos;
 	vec3 ta =vec3(0.5, 0.5, 0.0); //TargetPos; //vec3 ta =float3(CameraDir.x, CameraDir.z, CameraDir.y);//UE座標Z軸在上
 	mat3 ca = setCamera( ro, ta, 0.0 );
